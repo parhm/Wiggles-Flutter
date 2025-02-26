@@ -5,10 +5,10 @@ class QuickInfoCard extends StatelessWidget {
   final String value;
 
   const QuickInfoCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +25,14 @@ class QuickInfoCard extends StatelessWidget {
         children: [
           Text(
             value,
-            style: Theme.of(context).textTheme.subtitle1!.copyWith(
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
           ),
           const SizedBox(height: 8),
           Text(
             title,
-            style: Theme.of(context).textTheme.subtitle2!.copyWith(
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   fontSize: 12,
                   color: Colors.grey,
                 ),

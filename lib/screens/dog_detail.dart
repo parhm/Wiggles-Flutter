@@ -7,7 +7,7 @@ import 'package:flutter_wiggles/widgets/quick_info_card.dart';
 class DogDetail extends StatefulWidget {
   final Dog dog;
 
-  const DogDetail({Key? key, required this.dog}) : super(key: key);
+  const DogDetail({super.key, required this.dog});
 
   @override
   State<StatefulWidget> createState() => _DogDetailState();
@@ -20,13 +20,13 @@ class _DogDetailState extends State<DogDetail> {
   Widget build(BuildContext context) {
     var titleTextStyle = Theme.of(context)
         .textTheme
-        .headline6!
+        .headlineSmall!
         .copyWith(fontWeight: FontWeight.w600);
 
     var appBarWidget = AppBar(
       title: Text(
         'Details',
-        style: Theme.of(context).textTheme.headline6,
+        style: Theme.of(context).textTheme.headlineSmall,
       ),
       leading: IconButton(
         icon: const Icon(Icons.west_rounded),
@@ -37,7 +37,7 @@ class _DogDetailState extends State<DogDetail> {
           icon: Icon(
               _isFavorite ? Icons.favorite : Icons.favorite_border_rounded),
           onPressed: () {
-            setState(() => {_isFavorite = !_isFavorite});
+            setState(() {_isFavorite = !_isFavorite;});
           },
         ),
       ],
@@ -61,7 +61,7 @@ class _DogDetailState extends State<DogDetail> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(widget.dog.name,
-                  style: Theme.of(context).textTheme.headline5),
+                  style: Theme.of(context).textTheme.headlineMedium),
               GenderTag(dogGender: widget.dog.gender)
             ],
           ),
@@ -76,14 +76,14 @@ class _DogDetailState extends State<DogDetail> {
               const SizedBox(width: 5),
               Text(
                 widget.dog.location,
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodySmall,
               )
             ],
           ),
           const SizedBox(height: 8),
           Text(
             '${widget.dog.elapsedTime} min ago',
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodySmall,
           )
         ],
       ),
@@ -101,7 +101,7 @@ class _DogDetailState extends State<DogDetail> {
             const SizedBox(height: 16),
             Text(
               widget.dog.about,
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyMedium,
             )
           ],
         ));
@@ -154,13 +154,13 @@ class _DogDetailState extends State<DogDetail> {
                 children: [
                   Text(
                     widget.dog.owner.name,
-                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
                   ),
                   const SizedBox(height: 8),
                   Text(widget.dog.owner.bio,
-                      style: Theme.of(context).textTheme.bodyText1)
+                      style: Theme.of(context).textTheme.bodyMedium)
                 ],
               ),
               const Spacer(),
@@ -187,7 +187,7 @@ class _DogDetailState extends State<DogDetail> {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             minimumSize: Size((MediaQuery.of(context).size.width - 48), 50),
-            primary: Theme.of(context).colorScheme.secondary),
+            backgroundColor: Theme.of(context).colorScheme.secondary),
         onPressed: () {
           /* TODO() */
         },

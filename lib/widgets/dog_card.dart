@@ -5,7 +5,7 @@ import 'package:flutter_wiggles/widgets/gender_tag.dart';
 class DogCard extends StatelessWidget {
   final Dog dog;
 
-  const DogCard({Key? key, required this.dog}) : super(key: key);
+  const DogCard({super.key, required this.dog});
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +44,11 @@ class DogCard extends StatelessWidget {
             children: [
               Text(
                 dog.name,
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               Text(
                 '${dog.age} yrs | ${dog.weight} kg',
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
               Row(
                 children: [
@@ -60,7 +60,7 @@ class DogCard extends StatelessWidget {
                   const SizedBox(width: 5),
                   Text(
                     dog.location,
-                    style: Theme.of(context).textTheme.bodyText2,
+                    style: Theme.of(context).textTheme.bodySmall,
                   )
                 ],
               )
@@ -75,7 +75,7 @@ class DogCard extends StatelessWidget {
                   genderWidget,
                   Text(
                     '${dog.elapsedTime} min ago',
-                    style: Theme.of(context).textTheme.bodyText2,
+                    style: Theme.of(context).textTheme.bodySmall,
                   )
                 ]),
           ),

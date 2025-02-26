@@ -7,7 +7,7 @@ import 'package:flutter_wiggles/widgets/dog_card.dart';
 import 'package:provider/provider.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +21,12 @@ class MyHomePage extends StatelessWidget {
             children: [
               Text(
                 'Hey Parham,',
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: 5),
               Text(
                 'Adopt a new friend near you!',
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ],
           ),
@@ -49,7 +49,7 @@ class MyHomePage extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(19, 20, 0, 20),
       child: Text(
         'Nearby results',
-        style: Theme.of(context).textTheme.headline6,
+        style: Theme.of(context).textTheme.headlineSmall,
       ),
     );
 
